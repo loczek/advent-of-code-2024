@@ -12,8 +12,8 @@ pub static DIRS_POINT: [Point; 4] = [
 
 #[derive(PartialEq, Eq, Hash, Clone, Copy, Debug)]
 pub struct Point {
-    pub row: i32, // x
-    pub col: i32, // y
+    pub row: i32, // y
+    pub col: i32, // x
 }
 
 impl Point {
