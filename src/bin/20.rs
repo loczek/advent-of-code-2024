@@ -1,7 +1,7 @@
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet, VecDeque};
 
-use advent_of_code::{in_bounds, Point, DIRS_POINT};
+use advent_of_code::{Point, DIRS_POINT};
 
 advent_of_code::solution!(20);
 
@@ -59,7 +59,8 @@ pub fn part_one(input: &str) -> Option<u32> {
 
             for point_dx in DIRS_POINT {
                 let next_point = point + point_dx;
-                if in_bounds(next_point.row, rows as i32, next_point.col, cols as i32)
+
+                if next_point.in_bounds(rows as i32, cols as i32)
                     && grid[next_point.row as usize][next_point.col as usize] == '.'
                     && !visited.contains(&next_point)
                 {
